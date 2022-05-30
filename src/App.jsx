@@ -1,4 +1,3 @@
-// Imports
 import React, { useState } from 'react';
 import words from 'lodash.words';
 import './App.css'
@@ -6,7 +5,6 @@ import Result from './components/Result.jsx';
 import Numbers from './components/Numbers.jsx'
 import Functions from './components/Functions.jsx'
 import MathOperations from './components/MathOperations';
-// Generator function to create a new component
 const App = () => {
   const [result, setResult] = useState('');
 
@@ -27,7 +25,7 @@ const App = () => {
         onContentClear={() => setResult('')}
       />
       <MathOperations
-        onClickOperation={(operation) => setResult(result + operation)}
+        onClickOperation={(operation) => setResult(`${result}${operation}`)}
         // eslint-disable-next-line
         onClickEqual={() => setResult(eval(result))}
       />
@@ -35,5 +33,4 @@ const App = () => {
   );
 }
 
-// Export the component 
 export default App;
